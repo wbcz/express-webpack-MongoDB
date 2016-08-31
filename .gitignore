@@ -1,0 +1,13 @@
+.idea/
+npm-debug.log
+.DS_Store
+node_modules/
+web_modules/
+template_build/
+build/
+data.json
+*.zip
+cdn/
+zip/
+sftp-config.json
+.project

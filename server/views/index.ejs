@@ -1,0 +1,13 @@
+<% include header %>
+    <h1>User Informations：</h1>
+    <ul>
+        <% for(var i = 0; i < result.length; i++) { %>
+            <li>Name：<%= result[i].name %> ---------- Age：<%= result[i].age %></li>
+        <% } %>
+    </ul>
+    <h2>handle</h2>
+    <a href="/addUser">add</a>
+    <a href="/deleteUser">delete</a>
+    <a href="/updateUser">update</a>
+    <a href="/find">find</a>
+<% include footer %>

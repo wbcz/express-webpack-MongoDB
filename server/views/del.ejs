@@ -1,0 +1,17 @@
+<% include header %>
+    <h1>Delete User Information</h1>
+    <form method="post">
+        <ul>
+            <% for(var i = 0; i < result.length; i++) { %>
+            <li>
+                <label for="user">
+                    Name：<%= result[i].name %> 
+                    Age：<%= result[i].age %>
+                </label>
+                <input type="radio" name="user" value=<%= result[i]._id%>>
+            </li>
+            <% } %>
+        </ul>
+        <button type="submit">Submit</button>
+    </form>
+<% include footer %>

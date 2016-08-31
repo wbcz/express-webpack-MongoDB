@@ -1,0 +1,18 @@
+<% include header %>
+    <h1>Find User Information</h1>
+    <form method="post">
+        <input type="radio" checked name="find_type" value="0" id="_1">
+        <label for="_1">find by name</label>
+        <input type="radio" name="find_type" value="1" id="_2">
+        <label for="_2">find by age</label>
+        <br><br>
+        <input type="text" name="keyword">
+        <button type="submit">Submit</button>
+    </form>
+    <% if(result) { %>
+        <h2>Get Results：</h2>
+        Name：<%= result[0].name %> ---------- Age：<%= result[0].age %>
+        <br><br>
+        <a href='/'>Back to Home</a>
+    <% } %>
+<% include footer %>

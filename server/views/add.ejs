@@ -1,0 +1,11 @@
+<% include header %>
+	<h1>Add User Information</h1>
+    <form method="post">
+        Name：<input type="text" name="name">
+        Age：<input type="text" name="age">
+        <button type="submit">Submit</button>
+    </form>
+<% include footer %>
+<% if (env !== "production" && reload === true) { %>
+    <script src="/reload/reload.js"></script>
+<% } %>

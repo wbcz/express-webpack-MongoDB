@@ -1,0 +1,16 @@
+<% include header %>
+    <h1>Update User Information</h1>
+    <form method="post">
+        <ul>
+            <% for(var i = 0; i < result.length; i++) { %>
+            <li>
+                Name：<input type="text" name="name" value=<%= result[i].name %>>
+                Age：<input type="text" name="age" value=<%= result[i].age %>>
+                <input hidden type="text" name="_id" value=<%= result[i]._id %>>
+                <input type="radio" name='num' value=<%= i %>>
+            </li>
+            <% } %>
+        </ul>
+        <button type="submit">Submit</button>
+    </form>
+<% include footer %>
