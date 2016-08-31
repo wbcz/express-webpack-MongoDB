@@ -4,7 +4,9 @@
   "description": "client",
   "main": "index",
   "scripts": {
-    "start": "set cross-env NODE_ENV=dev && supervisor -w server,app.js node app"
+    "start": "set cross-env NODE_ENV=dev && supervisor -w server,server/app.js node server/app",
+    "app": "set cross-env NODE_ENV=DEV && node app_broswersync",
+    "pro": "webpack --config webpack.production.config.js -p & set cross-env NODE_ENV=production node app"
   },
   "author": "wangbo",
   "license": "ISC",
