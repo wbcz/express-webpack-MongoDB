@@ -1,0 +1,18 @@
+// font configure
+
+$fontFamily: "PingFang SC", "SFUIDisplay", "Hiragino Sans GB", "Source Han Sans", "Microsoft Yahei", "WenQuanYi Micro Hei", sans-serif;
+$rootFontSize: 12px;
+$lineHeight: 1.5;
+
+// rem fontsize
+$rem: 60;
+
+//title
+$fontSize_h1: 15px;
+$fontSize_h2: 14px;
+$fontSize_h3: 13px;
+$fontSize_h4: 12px;
+$fontSizeBase: $rootFontSize;
+$lineHeightBase: $lineHeight;
+
+$font: (h1:$fontSize_h1, h2:$fontSize_h2, h3:$fontSize_h3, h4:$fontSize_h4, p:$fontSizeBase);

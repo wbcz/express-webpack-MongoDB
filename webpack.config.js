@@ -19,18 +19,33 @@ devConfig = {
     },
     module: {
         loaders: [
-
-            {test: /\.js$/, loader: 'babel'},
-
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=40000'},
-
-            { test: /\.scss$/, loader: 'style!css?sourceMap!resolve-url!sass?sourceMap'}
-
+            {
+                test: /\.js$/, loader: 'babel'
+            },
+            { 
+                test: /\.(png|jpg)$/, loader: 'url-loader?limit=40000'
+            },
+            { 
+                test: /\.scss$/, loader: 'style!css?sourceMap!resolve-url!sass?sourceMap'
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue'
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                exclude: /node_modules/
+            },
+            { 
+                test: /\.(html|tpl)$/, loader: 'html-loader' 
+            }
         ]
     },
-    postcss: [
-        require('autoprefixer')
-    ],
+    // postcss: [
+    //     require('autoprefixer
+
+           // ],
     resolve: {
         extensions: ['', '.vue', '.js', '.json', '.scss', '.css']
     },

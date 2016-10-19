@@ -1,0 +1,51 @@
+// layout
+
+/* ====================placeholder==================*/
+
+%text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+%center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+%showBgImg {
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+%clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/*=======================mixin====================*/
+
+@mixin fitImg($url, $type: contain) {
+	@extend %showBgImg;
+	background-image: $url;
+	background-size: $type;
+}
+
+@mixin float($float: left) {
+    float: $float;
+}
+
+@mixin textAlign($align: left) {
+    text-align: $align;
+}
+
+/*====================function====================*/
+
+// rem 自适应适配
+@function rem($px, $base:60) {
+    @return ($px / $base) * 1rem;
+}
