@@ -8,6 +8,7 @@ var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
 devConfig = {
     devtool: 'eval-source-map',
+    context: __dirname,
     entry: {
         page1: ["./client/page1", hotMiddlewareScript],
         page2: ["./client/page2", hotMiddlewareScript]
@@ -19,9 +20,9 @@ devConfig = {
     },
     module: {
         loaders: [
-            {
-                test: /\.js$/, loader: 'babel'
-            },
+            // {
+            //     test: /\.js$/, loader: 'babel'
+            // },
             { 
                 test: /\.(png|jpg)$/, loader: 'url-loader?limit=40000'
             },
@@ -34,8 +35,15 @@ devConfig = {
             },
             {
                 test: /\.js$/,
+                exclude: ['node_modules'],
+                include: __dirname,
                 loader: 'babel',
-                exclude: /node_modules/
+                query: {
+                    babelrc: true,
+                    presets: [
+                        ['es2015', { modules: false }],
+                    ],
+                },
             },
             { 
                 test: /\.(html|tpl)$/, loader: 'html-loader' 
@@ -50,10 +58,11 @@ devConfig = {
         extensions: ['', '.vue', '.js', '.json', '.scss', '.css']
     },
     plugins: [
-        // new HtmlWebpackPlugin({
-        //     title: 'My App',
-        //     //filename: '.public/index.html'
-        // }),
+        new HtmlWebpackPlugin({
+            title: 'My App',
+            //filename: 'index.html',
+            //template: ('./client/template/index.html')
+        }),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.CommonsChunkPlugin("common.js"),
         new ExtractTextPlugin("[name].css"),

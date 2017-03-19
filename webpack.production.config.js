@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 var productionConfig = [{
     entry: {
@@ -24,8 +25,14 @@ var productionConfig = [{
         }]
     },
     plugins: [
-        new ExtractTextPlugin('./[name]/index.css', {
+        new ExtractTextPlugin('./[name]/index[hash].css', {
             allChunks: true
+        }),
+        new webpack.optimize.CommonsChunkPlugin("common.js"),
+        new HtmlWebpackPlugin({
+            title: 'My App',
+            //filename: '',
+            template: './client/template/index.html'
         }),
         new webpack.optimize.UglifyJsPlugin()
     ]
