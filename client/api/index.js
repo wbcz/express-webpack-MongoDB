@@ -1,21 +1,20 @@
 import axios from 'axios'
-console.log(axios)
 //import qs from 'qs'
 //import NProgress from 'nprogress'
 import config from './config'
 //import {setMessage} from '~utils'
 
 axios.interceptors.request.use(config => {
-    //NProgress.start()
+    NProgress.start()
     return config
 }, error => Promise.reject(error))
 
 axios.interceptors.response.use(response => response, error => Promise.resolve(error.response))
 
 function checkStatus(response) {
-    //NProgress.done()
+    NProgress.done()
     if (response.status === 200 || response.status === 304) {
-        return Promise.resolve(response)
+        return response
     }
     return {
         data: {
@@ -33,7 +32,7 @@ function checkCode(res) {
     return res.data
 }
 
-module.exports = {
+export default {
     post(url, data) {
         return axios({
             method: 'post',

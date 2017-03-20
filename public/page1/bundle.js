@@ -1,1 +1,0 @@
-webpackJsonp([2],[function(n,o,c){c(2),c(1),console.log("client/page1/index.js"),console.log(3333)},,function(n,o){}]);

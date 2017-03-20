@@ -20,14 +20,20 @@
 		};
 		document.addEventListener('DOMContentLoaded', recalc, false);
 		window.addEventListener('resize',recalc,false);
+
+		<!-- @if NODE_ENV='production' -->
+		window.ROUTER_API = '<!-- @echo ROUTER_API -->';
+		window.VERSION = '<!-- @echo VERSION -->';
+		<!-- @endif -->
 	</script>
-	@@style
+	
+	<link rel="stylesheet" href="/common/style/common.css">
+	
+	<link rel="stylesheet" href="page.css">
+	
+	<!-- @if NODE_ENV!='production' -->
+	<script src="/config.js"></script>
+	<!-- @endif -->
+
 </head>
 <body>
-<div class="loading" >
-	<div class="loader-circle"></div>
-    <div class="loader-line-mask">
-	    <div class="loader-line"></div>
-	</div>
-</div>
-<div id="page-type" data-pagetype="@@type"></div>

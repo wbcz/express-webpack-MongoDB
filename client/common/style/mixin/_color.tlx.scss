@@ -1,0 +1,27 @@
+// color style
+
+//colors
+$bgColor: #F5F7F7; //main background color
+$textColor: #646E7A;   //main text color
+$assistTextColor: #878E99;  //assist text color
+
+//focus colors
+$mainColor: #0DBDD1;  //primary color
+$mainActionColor: #0BA6B8; //pressed color
+$priceColor: #FF643D; 
+$priceActionColor: #E55936;
+
+//tabs colors
+$tabBgColor: #FAFAFA; 
+$tabTextColor: #ABB4B8;
+
+//line colors
+$borderColor: #EBECEE;
+
+//navBar colors
+$navBarTitleColor: #4B525C;
+$navBarIconColor: #717B8A;
+
+@mixin linear-gradient($color...) {
+	background-image: linear-gradient($color);
+}

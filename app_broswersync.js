@@ -4,11 +4,11 @@ var express = require('express'),
 var isDev = process.env.NODE_ENV !== 'production';
 var app = express();
 var port = 3000;
-var users = require('./server/routes/users');
+//var users = require('./server/routes/users');
 
 
-app.set('view engine', 'ejs');
-app.set('views', path.resolve(__dirname, './server/views'));
+//app.set('view engine', 'ejs');
+//app.set('views', path.resolve(__dirname, './server/views'));
 
 app.locals.env = process.env.NODE_ENV || 'dev';
 app.locals.reload = false;
@@ -30,7 +30,7 @@ if (isDev) {
     }));
     app.use(webpackHotMiddleware(compiler));
 
-    app.use('/', users);
+    //app.use('/', users);
 
     // browsersync is a nice choice when modifying only views (with their css & js)
     var bs = require('browser-sync').create();
@@ -40,16 +40,16 @@ if (isDev) {
             ui: false,
             notify: false,
             proxy: 'localhost:3000',
-            files: ['./server/views/**'],
+            files: ['./client/**'],
             port: 8080
         });
         console.log('App (dev) is going to be running on port 8080 (by browsersync).');
     });
 
 } else {
-    app.use(express.static(path.join(__dirname, 'public')));
-    app.use('/', users);
-    app.listen(port, function () {
-        console.log('App (production) is now running on port 3000!');
-    });
+    // app.use(express.static(path.join(__dirname, 'public')));
+    // app.use('/', users);
+    // app.listen(port, function () {
+    //     console.log('App (production) is now running on port 3000!');
+    // });
 }
