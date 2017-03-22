@@ -9,6 +9,7 @@
 <script lang="babel">
 
 import loading from '~components/loading'
+import error from '~components/error'
 // import modules from '~components/module-1.vue'
 // import api from '~api'
 //import loading from './../../common/components/error'
