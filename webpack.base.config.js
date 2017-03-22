@@ -1,20 +1,25 @@
-var webpack = require("webpack");
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
-var path = require('path');
-var entris = require('./client/utils/')
+const webpack = require("webpack");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const entris = require('./client/utils/')
 
-var publicPath = "http://localhost:3000";
-var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
-console.log(entris)
-devConfig = {
+let publicPath = "http://localhost:3000";
+let provideItems = {
+    Vue: 'vue'
+}
+
+const baseConfig = {
     devtool: 'eval-source-map',
     context: __dirname,
-    entry: entris,
+    entry: {
+        vendor: ["vue"]
+    },
     output: {
         path: path.resolve('./public'),
         filename:"[name]/index.js",
-        publicPath: '/'
+        chunkFilename: '[id].[hash].bundle.js',
+        publicPath: '/'  //cdn存放的路径
     },
     module: {
         loaders: [
@@ -30,7 +35,6 @@ devConfig = {
                     ],
                 },
             },
-
             {
                 test: /\.vue$/,
                 loader: 'vue-loader'
@@ -69,7 +73,6 @@ devConfig = {
         }
     },
     sassLoader: {
-        // 用于sass import时的路径查找，默认会在 ../common/style 目录下查找
         includePaths: [ path.resolve(__dirname, './client/common/style') ],
     },
     resolve: {
@@ -80,15 +83,15 @@ devConfig = {
     },
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
-        new webpack.optimize.CommonsChunkPlugin("common.js"),
-        new ExtractTextPlugin("[name].css"),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.ProvidePlugin(
+            provideItems
+        )
     ]
 }
 
 Object.keys(entris).forEach(function(entry) {
     console.log(entry + '/index.html')
-    devConfig.plugins.push(new HtmlWebpackPlugin({
+    baseConfig.plugins.push(new HtmlWebpackPlugin({
         chunks: [entry,'common.js'],
         filename: entry + '/index.html',
         template: __dirname + '/client/template/index.html',
@@ -96,4 +99,6 @@ Object.keys(entris).forEach(function(entry) {
     }))
 })
 
-module.exports = devConfig;
+Object.assign(baseConfig.entry, entris)
+
+module.exports = baseConfig;

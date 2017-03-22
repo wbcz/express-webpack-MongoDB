@@ -6,7 +6,7 @@
   "scripts": {
     "start": "set cross-env NODE_ENV=dev && supervisor -w server,server/app.js node --harmony server/app",
     "app": "set cross-env NODE_ENV=DEV && node app_broswersync",
-    "pro": "webpack --config webpack.production.config.js -p"
+    "pro": "webpack --config webpack.prod.config.js -p"
   },
   "author": "wangbo",
   "license": "ISC",
@@ -56,6 +56,7 @@
     "axios": "^0.15.3",
     "html": "^1.0.0",
     "html-loader": "^0.4.5",
-    "vue": "^2.2.4"
+    "vue": "^2.2.4",
+    "webpack-merge": "^4.1.0"
   }
 }
