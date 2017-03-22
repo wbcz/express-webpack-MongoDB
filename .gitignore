@@ -4,7 +4,7 @@ npm-debug.log
 node_modules/
 web_modules/
 template_build/
-build/
+dist/
 data.json
 *.zip
 cdn/
