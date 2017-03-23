@@ -23,6 +23,14 @@ const devConfig = merge(baseWebpackConfig, {
     ]
 })
 
+// Object.keys(entris).forEach(function(key){
+//     let arr = [entris[key]];
+//     arr.unshift('webpack/hot/dev-server','webpack-dev-server/client?http://localhost:3000');
+//     entris[key] = arr;
+// });
+
+// devConfig.entry = entris
+
 Object.keys(entris).forEach(function(entry) {
     devConfig.plugins.push(new HtmlWebpackPlugin({
         chunks: [entry,'common.js'],

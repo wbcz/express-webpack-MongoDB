@@ -7,7 +7,6 @@
     </div>
 </template>
 <script lang="babel">
-
 import loading from '~components/loading'
 import error from '~components/error'
 // import modules from '~components/module-1.vue'
@@ -30,5 +29,5 @@ export default {
     // }
 }
 
-console.log($('#app'))
+console.log(4444)
 </script>

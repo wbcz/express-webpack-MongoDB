@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require('path');
 const entris = require('./utils')
-let {rootPath, distPath, publicPath, provideItems, api} = require('../config/index')
+let {rootPath, distPath, publicPath, provideItems} = require('../config/index')
 
 const baseConfig = {
     devtool: 'eval-source-map',

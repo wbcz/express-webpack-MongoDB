@@ -29,6 +29,7 @@ if (isDev) {
 
     app.use('/', users);
     // add "reload" to express, see: https://www.npmjs.com/package/reload
+    // make page reload
     var reload = require('reload');
     var http = require('http');
     var server = http.createServer(app);
