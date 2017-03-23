@@ -1,4 +1,4 @@
-var userModel = require('../config/db');
+var userModel = require('../schema/db');
 
 module.exports = {
     index: function(req, response, next) {

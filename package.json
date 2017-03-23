@@ -4,9 +4,10 @@
   "description": "client",
   "main": "index",
   "scripts": {
-    "start": "set cross-env NODE_ENV=dev && supervisor -w server,server/app.js node --harmony server/app",
-    "app": "set NODE_ENV=DEV && node app_broswersync",
-    "pro": "set NODE_ENV=PROD && webpack --config ./build/webpack.prod.config.js -p"
+    "sd": "export NODE_ENV=dev && supervisor -w server,server/app.js node --harmony server/app",
+    "sp": "export NODE_ENV=prod && supervisor -w server,server/app.js node --harmony server/app",
+    "app": "export NODE_ENV=dev && node broswersync",
+    "pro": "export NODE_ENV=prod && webpack --config ./build/webpack.prod.config.js -p"
   },
   "author": "wangbo",
   "license": "ISC",

@@ -9,8 +9,8 @@ require('shelljs/global')
 let {rootPath, distPath, publicPath, provideItems, api} = require('../config/index')
 rm('-rf', distPath)
 
-prodConfig = merge(baseWebpackConfig, {
-    devtool: 'cheap-module-source-map',
+const prodConfig = merge(baseWebpackConfig, {
+    // devtool: 'cheap-module-source-map',
     plugins: [
         new webpack.DefinePlugin({
             PRODUCTION: JSON.stringify(true)
@@ -34,7 +34,7 @@ Object.keys(entris).forEach(function(entry) {
         chunks: [entry],
         title: entry,
         //template: require('html-webpack-template'),
-        // routeApi: process.env.NODE_ENV == 'DEV'
+        // routeApi: process.env.NODE_ENV == 'dev'
         //  ? 'http://localhost:3000'
         //  : 'http://localhost:9000',
         filename: entry + '/index.html',
@@ -69,7 +69,7 @@ Object.keys(entris).forEach(function(entry) {
         ],
         mobile: true,
         template: rootPath +'/client/template/index.ejs',
-        inject: true,
+        inject: false,
         // window: {
         //     env: {
         //         apiHost: 'http://myapi.com/api/v1'

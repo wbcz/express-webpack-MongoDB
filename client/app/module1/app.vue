@@ -29,4 +29,6 @@ export default {
     //     if (success) this.list = data
     // }
 }
+
+console.log($('#app'))
 </script>

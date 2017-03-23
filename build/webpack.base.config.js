@@ -71,6 +71,9 @@ const baseConfig = {
             css: ExtractTextPlugin.extract('css!autoprefixer')
         }
     },
+    externals: {
+        'jquery': 'jQuery'
+    },
     sassLoader: {
         includePaths: [ rootPath + '/client/common/style' ],
     },
