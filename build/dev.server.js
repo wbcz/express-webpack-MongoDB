@@ -11,7 +11,7 @@ app.locals.reload = false;
 const webpack = require('webpack'),
     webpackDevMiddleware = require('webpack-dev-middleware'),
     webpackHotMiddleware = require('webpack-hot-middleware'),
-    webpackDevConfig = require('./build/webpack.dev.config.js');
+    webpackDevConfig = require('./webpack.dev.config.js');
 
 const compiler = webpack(webpackDevConfig);
 
@@ -27,14 +27,15 @@ app.use(webpackHotMiddleware(compiler));
 
 // browsersync is a nice choice when modifying only views (with their css & js)
 const bs = require('browser-sync').create();
+
 app.listen(port, function(){
     bs.init({
         open: false,
         ui: false,
         notify: false,
         proxy: 'localhost:3000',
-        files: ['./client/**'],
+        files: ['../client/**'],
         port: 8080
     });
-    console.log('App (dev) is going to be running on port 8080 (by browsersync).');
+    console.log('App (dev) is going to be running on port 9000 (by browsersync).');
 });

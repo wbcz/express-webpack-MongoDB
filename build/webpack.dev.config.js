@@ -24,7 +24,6 @@ const devConfig = merge(baseWebpackConfig, {
 })
 
 Object.keys(entris).forEach(function(entry) {
-    console.log(entry)
     devConfig.plugins.push(new HtmlWebpackPlugin({
         chunks: [entry,'common.js'],
         filename: entry + '/index.html',
@@ -32,4 +31,5 @@ Object.keys(entris).forEach(function(entry) {
         inject: true
     }))
 })
+
 module.exports = devConfig

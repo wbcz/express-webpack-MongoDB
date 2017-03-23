@@ -6,7 +6,7 @@
   "scripts": {
     "sd": "export NODE_ENV=dev && supervisor -w server,server/app.js node --harmony server/app",
     "sp": "export NODE_ENV=prod && supervisor -w server,server/app.js node --harmony server/app",
-    "app": "export NODE_ENV=dev && node broswersync",
+    "app": "export NODE_ENV=dev && node build/dev.server",
     "pro": "export NODE_ENV=prod && webpack --config ./build/webpack.prod.config.js -p"
   },
   "author": "wangbo",

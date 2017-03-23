@@ -9,10 +9,12 @@
 // import navComponent from '~components/nav-component.vue'
 // import modules from '~components/module-1.vue'
 // import api from '~api'
+console.log(6666)
 import loading from '~components/error'
 export default {
     name: 'app',
     data() {
+        console.log(4444)
         return {
             isShow: true
         }
