@@ -8,7 +8,7 @@ const entris = require('./utils')
 let {rootPath, distPath, publicPath, provideItems, api} = require('../config/index')
 const devConfig = merge(baseWebpackConfig, {
     output: {
-        publicPath: '/'
+        publicPath: '/',
     },
     devtool: '#eval-source-map',
     plugins: [
@@ -18,18 +18,17 @@ const devConfig = merge(baseWebpackConfig, {
         //     }
         // }),
         new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin('[name].css'),
-        new webpack.optimize.CommonsChunkPlugin('vendor.js')
+        new ExtractTextPlugin('[name].css')
     ]
 })
 
-// Object.keys(entris).forEach(function(key){
-//     let arr = [entris[key]];
-//     arr.unshift('webpack/hot/dev-server','webpack-dev-server/client?http://localhost:3000');
-//     entris[key] = arr;
-// });
+Object.keys(entris).forEach(function(key){
+    let arr = [entris[key]];
+    arr.unshift('./build/dev.client');
+    entris[key] = arr;
+});
 
-// devConfig.entry = entris
+devConfig.entry = entris
 
 Object.keys(entris).forEach(function(entry) {
     devConfig.plugins.push(new HtmlWebpackPlugin({
@@ -37,7 +36,8 @@ Object.keys(entris).forEach(function(entry) {
         filename: entry + '/index.html',
         template: rootPath +'/client/template/index.html',
         inject: true
-    }))
+    })
+    )
 })
 
 module.exports = devConfig

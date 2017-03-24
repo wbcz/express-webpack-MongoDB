@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const path = require('path');
 const entris = require('./utils')
-let {rootPath, distPath, publicPath, provideItems} = require('../config/index')
+let {rootPath, distPath, publicPath, provideItems, proxy} = require('../config/index')
 
 const baseConfig = {
     devtool: 'eval-source-map',
@@ -13,7 +13,7 @@ const baseConfig = {
         path: distPath,
         filename:"[name]/index.js",
         chunkFilename: '[id].[hash].bundle.js',
-        publicPath: '/'  //cdn存放的路径
+        publicPath: publicPath
     },
     module: {
         loaders: [
@@ -87,7 +87,12 @@ const baseConfig = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.ProvidePlugin(
             provideItems
-        )
+        ),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['vendor'], //这种打法需要在模板中引用文件路径
+            minChunks: Infinity, //Infinity 打包到各自的包中
+            //chunks:['index', 'module1'] //只有index、module1都引用的的模块才会被打包到公共模块
+        })
     ]
 }
 

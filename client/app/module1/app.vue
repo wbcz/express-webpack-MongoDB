@@ -1,6 +1,6 @@
 <template>
     <div class="g-doc">
-        this is app
+        this is appa
         <loading :showLoading="true"></loading>
 <!--         <nav-component :current="1" />
         <modules :list="list" /> -->
@@ -16,7 +16,7 @@ export default {
     name: 'app',
     data() {
         return {
-            isShow: false
+            isShow: true
         }
     },
     components: {
@@ -29,5 +29,5 @@ export default {
     // }
 }
 
-console.log(4444)
+console.log(555)
 </script>

@@ -20,11 +20,6 @@ const prodConfig = merge(baseWebpackConfig, {
                 warnings: false
             }
         }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ['vendor'], //这种打法需要在模板中引用文件路径
-            minChunks: Infinity, //Infinity 打包到各自的包中
-            //chunks:['index', 'module1'] //只有index、module1都引用的的模块才会被打包到公共模块
-        }),
         new ExtractTextPlugin('[name]/index[hash].css')
     ]
 })
@@ -46,10 +41,6 @@ Object.keys(entris).forEach(function(entry) {
         },
         title: entry,
         meta: [
-            {
-              name: 'description',
-              content: 'A better default template for html-webpack-plugin.'
-            },
             {
               name: 'description',
               content: 'Vue2 + Webpack + Express + MongoDB'
