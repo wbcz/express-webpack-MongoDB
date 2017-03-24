@@ -81,6 +81,8 @@ const baseConfig = {
         extensions: ['', '.vue', '.js', '.json', '.scss', '.css'],
         alias: {
             '~components': rootPath + '/client/common/components',
+            '~mod': rootPath + '/client/common/mod',
+            '~config': rootPath + '/config/index',
         }
     },
     plugins: [

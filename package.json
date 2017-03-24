@@ -1,12 +1,12 @@
 {
   "name": "app",
   "version": "1.0.0",
-  "description": "client",
+  "description": "front-end",
   "main": "index",
   "scripts": {
     "sd": "export NODE_ENV=dev && supervisor -w server,server/app.js node --harmony server/app",
     "sp": "export NODE_ENV=prod && supervisor -w server,server/app.js node --harmony server/app",
-    "app": "export NODE_ENV=dev && node build/dev.server",
+    "app": "export NODE_ENV=dev && node --harmony build/dev.server",
     "pro": "export NODE_ENV=prod && webpack --config ./build/webpack.prod.config.js -p"
   },
   "author": "wangbo",
@@ -46,6 +46,7 @@
     "morgan": "~1.7.0",
     "node-sass": "^3.8.0",
     "npm": "^3.10.6",
+    "nprogress": "^0.2.0",
     "postcss-loader": "^0.11.0",
     "reload": "^1.0.1",
     "resolve-url-loader": "^1.6.0",
@@ -55,6 +56,7 @@
     "shelljs": "^0.7.7",
     "style-loader": "^0.13.1",
     "supervisor": "^0.11.0",
+    "toastr": "^2.1.2",
     "url-loader": "^0.5.7",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^11.1.4",

@@ -1,8 +1,7 @@
 import axios from 'axios'
-//import qs from 'qs'
-//import NProgress from 'nprogress'
+import NProgress from 'nprogress'
 import config from '~config'
-//import {setMessage} from '~utils'
+import {setMessage} from '~mod/utils'
 
 axios.interceptors.request.use(config => {
     NProgress.start()
@@ -27,7 +26,7 @@ function checkStatus(response) {
 
 function checkCode(res) {
     if (!res.data.success) {
-        //setMessage(res.data.message || res.data.data)
+        setMessage(res.data.message || res.data.data)
     }
     return res.data
 }
@@ -36,7 +35,7 @@ export default {
     post(url, data) {
         return axios({
             method: 'post',
-            url: config.api + url,
+            url: url,
             data: data,
             timeout: config.timeout,
             headers: {
@@ -48,7 +47,7 @@ export default {
     get(url, params) {
         return axios({
             method: 'get',
-            url: config.api + url,
+            url: url,
             params,
             timeout: config.timeout,
             headers: {

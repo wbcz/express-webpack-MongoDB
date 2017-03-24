@@ -3408,6 +3408,10 @@ npmlog@^4.0.0, npmlog@^4.0.1, npmlog@~4.0.0:
     gauge "~2.7.1"
     set-blocking "~2.0.0"
 
+nprogress@^0.2.0:
+  version "0.2.0"
+  resolved "http://registry.npm.taobao.org/nprogress/download/nprogress-0.2.0.tgz#cb8f34c53213d895723fcbab907e9422adbcafb1"
+
 nth-check@~1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/nth-check/download/nth-check-1.0.1.tgz#9929acdf628fc2c41098deab82ac580cf149aae4"
@@ -4914,6 +4918,10 @@ to-arraybuffer@^1.0.0:
 to-fast-properties@^1.0.1:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/to-fast-properties/download/to-fast-properties-1.0.2.tgz#f3f5c0c3ba7299a7ef99427e44633257ade43320"
+
+toastr@^2.1.2:
+  version "2.1.2"
+  resolved "http://registry.npm.taobao.org/toastr/download/toastr-2.1.2.tgz#fd69066ae7578a5b3357725fc9c7c335e9b681df"
 
 toposort@^1.0.0:
   version "1.0.3"
