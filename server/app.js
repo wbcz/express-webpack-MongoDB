@@ -4,7 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var users = require('./routes/users');
 
 var isDev = process.env.NODE_ENV !== 'PROD';
@@ -13,6 +12,7 @@ var port = 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, './public')));
 app.set('view engine', 'ejs');
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -24,7 +24,7 @@ app.use(cookieParser());
 // local variables for all views
 app.locals.env = process.env.NODE_ENV || 'dev';
 app.locals.reload = true;
-console.log(process.env.NODE_ENV)
+console.log(process.env.NODE_ENV, 'sendData')
 if (isDev) {
 
     app.use('/', users);
@@ -34,6 +34,17 @@ if (isDev) {
     var http = require('http');
     var server = http.createServer(app);
     reload(server, app);
+    
+    var io = require('socket.io')(server);
+
+    io.on('connection', function(socket) {
+        socket.emit('welcome','欢迎');
+        // socket.broadcast.emit('patrol','大王叫我来巡山');
+        // socket.on('move', function(data) {
+        //     socket.broadcast.emit('moveAll', data);
+        // })
+    })
+
     server.listen(port, function(){
         console.log(process.env.NODE_ENV, 'process.env.NODE_ENV')
         console.log('App (dev) is now running on port 3000!');

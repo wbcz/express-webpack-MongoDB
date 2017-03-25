@@ -1,4 +1,5 @@
 var userModel = require('../schema/db');
+var path = require('path');
 
 module.exports = {
     index: function(req, response, next) {
@@ -11,7 +12,6 @@ module.exports = {
         response.render('add',{});
     },
     add: function (req, response, next) {
-        console.log(req.body)
         var newUser = {
             name: req.body.name,
             age: req.body.age
@@ -73,5 +73,9 @@ module.exports = {
         } else {
             getResult();
         }
+    },
+    sendData: function(req, response, next) {
+
+        response.sendFile(path.resolve(__dirname, './../views/chat.html'))
     }
 };
