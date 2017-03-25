@@ -18,7 +18,10 @@ const devConfig = merge(baseWebpackConfig, {
         //     }
         // }),
         new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin('[name].css')
+        //new ExtractTextPlugin({ filename: '[name].css', allChunks: true })
+        new ExtractTextPlugin('[name].css',  {
+            allChunks: true
+        })
     ]
 })
 

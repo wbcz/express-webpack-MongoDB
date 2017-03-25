@@ -8,7 +8,7 @@ var users = require('./routes/users');
 
 var isDev = process.env.NODE_ENV !== 'PROD';
 var app = express();
-var port = 3000;
+var port = 4000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,21 +33,21 @@ if (isDev) {
     var reload = require('reload');
     var http = require('http');
     var server = http.createServer(app);
-    reload(server, app);
+    // reload(server, app);
     
     var io = require('socket.io')(server);
 
     io.on('connection', function(socket) {
         socket.emit('welcome','欢迎');
-        // socket.broadcast.emit('patrol','大王叫我来巡山');
-        // socket.on('move', function(data) {
-        //     socket.broadcast.emit('moveAll', data);
-        // })
+        socket.broadcast.emit('patrol','大王叫我来巡山');
+        socket.on('move', function(data) {
+            socket.broadcast.emit('moveAll', data);
+        })
     })
 
     server.listen(port, function(){
         console.log(process.env.NODE_ENV, 'process.env.NODE_ENV')
-        console.log('App (dev) is now running on port 3000!');
+        console.log('App (dev) is now running on port 4000!');
     });
 } else {
     // static assets served by express.static() for production
@@ -55,7 +55,7 @@ if (isDev) {
     //require('./server/routes')(app);
     app.use('/', users);
     app.listen(port, function () {
-        console.log('App (production) is now running on port 3000!');
+        console.log('App (production) is now running on port 4000!');
     });
 }
 

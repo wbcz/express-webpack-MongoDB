@@ -5,9 +5,8 @@
 </style>
 <template>
     <div class="chat-index">
+    ddfd
         <loading :showLoading="isShow"></loading>
-<!--         <nav-component :current="1" />
-        <modules :list="list" /> -->
     </div>
 </template>
 
@@ -15,20 +14,26 @@
 import loading from '~components/loading'
 import error from '~components/error'
 import ajax from '~mod/ajax'
+import nav from '../common/v-nav'
+import ElementUI from 'element-ui' // 引入element-ui
+
+console.log(555555555)
+Vue.use(ElementUI) // Vue全局使用
 
 export default {
     name: 'index',
     data() {
         return {
-            isShow: true
+            isShow: true,
         }
     },
     components: {
         loading
     },
     async mounted() {
-        const {success, data} = await ajax.get('/topics', {page: 1})
-        if (success) this.list = data
+        //const data = 
+        console.log(await ajax.get('/chat'))
+        //if (data) this.list = data
     }
 }
 

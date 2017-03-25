@@ -9,15 +9,13 @@ module.exports = {
 		Vue: 'vue'
 	},
 	proxyConfi: {
-		target: 'http://cnodejs.org/api/v1',
+		// target: 'http://cnodejs.org/api/v1',
+		target: 'http://localhost:4000',
 		changeOrigin: true,
 		ws: true,
 		// pathRewrite: {
 		//     '^/api': '/'
 		// },
-		router: {
-			'dev.localhost:3000' : 'http://localhost:8000'
-		}
 	},
 	port: 3000,
 	timeout: 4000

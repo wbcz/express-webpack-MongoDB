@@ -16,7 +16,7 @@
 <body>
 <input type="button" value="最先点我">
 <div id="div1">然后托我</div>
-<script src="https://cdn.socket.io/socket.io-1.0.6.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script>
 <script type="text/javascript">
 
     var oBtn = document.getElementsByTagName('input')[0];
@@ -30,13 +30,13 @@
             alert(data);
             this.emit('received','收到');
         });
-        // socket.on('patrol', function(data) {
-        //     alert(data);
-        // });
-        // socket.on('moveAll', function(data) {
-        //     oDiv.style.left = data.left + 'px';
-        //     oDiv.style.top = data.top + 'px';
-        // })
+        socket.on('patrol', function(data) {
+            alert(data);
+        });
+        socket.on('moveAll', function(data) {
+            oDiv.style.left = data.left + 'px';
+            oDiv.style.top = data.top + 'px';
+        })
     };
     oDiv.onmousedown = function(ev) {
         var ev = ev || event;

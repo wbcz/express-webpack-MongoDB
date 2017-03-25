@@ -61,7 +61,6 @@ module.exports = {
         var getResult = function() {
             userModel.find({name: reqWord}, function(err, result) {
                 if( result.length ) {
-                    console.log(result, '111')
                     response.render('find', { result: result, err:'' });
                 } else {
                     response.send(response.send('<strong style="color:red;margin-right:40px;">search:----------'+reqWord+'----------fail</strong><a href="/find">Back</a>'));
@@ -75,7 +74,10 @@ module.exports = {
         }
     },
     sendData: function(req, response, next) {
-
-        response.sendFile(path.resolve(__dirname, './../views/chat.html'))
+        response.send({
+            name:1,
+            age: 2
+        })
+        //response.sendFile(path.resolve(__dirname, './../views/chat.html'))
     }
 };
