@@ -4,14 +4,14 @@ import config from '~config'
 import {setMessage} from '~mod/utils'
 
 axios.interceptors.request.use(config => {
-    NProgress.start()
+    //NProgress.start()
     return config
 }, error => Promise.reject(error))
 
 axios.interceptors.response.use(response => response, error => Promise.resolve(error.response))
 
 function checkStatus(response) {
-    NProgress.done()
+    //NProgress.done()
     if (response.status === 200 || response.status === 304) {
         return response
     }

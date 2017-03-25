@@ -10,9 +10,11 @@ const compiler = webpack(webpackDevConfig);
 
 let {rootPath, distPath, publicPath, provideItems, proxyConfi, port} = require('../config/index')
 
+// app.use(require('connect-history-api-fallback')())
+
 app.use(webpackDevMiddleware(compiler, {
     publicPath: webpackDevConfig.output.publicPath,
-    noInfo: false,
+    noInfo: true,
     stats: {
         colors: true
     }

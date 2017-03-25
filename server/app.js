@@ -10,11 +10,10 @@ var isDev = process.env.NODE_ENV !== 'PROD';
 var app = express();
 var port = 4000;
 
+//app.use(history());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, './public')));
 app.set('view engine', 'ejs');
-
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -28,11 +27,16 @@ console.log(process.env.NODE_ENV, 'sendData')
 if (isDev) {
 
     app.use('/', users);
-    // add "reload" to express, see: https://www.npmjs.com/package/reload
+    app.use(express.static(path.join(__dirname, './public')));
+    var fallback = require('express-history-api-fallback')
+    var root = __dirname + '/public'
+    app.use(fallback('default.html', { root: root }))
+
     // make page reload
     var reload = require('reload');
     var http = require('http');
     var server = http.createServer(app);
+    //reload会影响到socket的状态，所以在使用socket的时候需要关闭它
     // reload(server, app);
     
     var io = require('socket.io')(server);

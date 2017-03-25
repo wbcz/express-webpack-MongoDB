@@ -6,4 +6,4 @@ let vm  = new Vue({
   router: router,
   render: h => h(App)
 }).$mount('#app')
-// app.$mount('#app')
+

@@ -5,6 +5,7 @@
 </style>
 <template>
     <div class="chat-index">
+        <router-link :to="{ path: 'list/5' }">goToHash</router-link>
         <loading :showLoading="isShow"></loading>
     </div>
 </template>
@@ -14,13 +15,13 @@ import loading from '~components/loading'
 import error from '~components/error'
 import ajax from '~mod/ajax'
 import nav from '../common/v-nav'
-import ElementUI from 'element-ui' // 引入element-ui
-console.log(4444444)
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
 
 Vue.use(ElementUI) // Vue全局使用
 
 export default {
-    name: 'list',
+    name: 'index',
     data() {
         return {
             isShow: false,
@@ -30,9 +31,8 @@ export default {
         loading
     },
     async mounted() {
-        //const data = 
+        console.log(this.$route)
         console.log(await ajax.get('/chat'))
-        //if (data) this.list = data
     }
 }
 
