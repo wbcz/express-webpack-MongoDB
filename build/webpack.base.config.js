@@ -7,7 +7,7 @@ let {rootPath, distPath, publicPath, provideItems, proxy} = require('../config/i
 const baseConfig = {
     devtool: 'eval-source-map',
     entry: {
-        vendor: ["vue"]
+        vendor: ["vue", "element-ui"]
     },
     output: {
         path: distPath,
@@ -92,6 +92,7 @@ const baseConfig = {
         extensions: ['', '.vue', '.js', '.json', '.scss', '.css'],
         alias: {
             '~components': rootPath + '/client/common/components',
+            '~plugins': rootPath + '/client/common/plugins',
             '~mod': rootPath + '/client/common/mod',
             '~config': rootPath + '/config/index',
         }

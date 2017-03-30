@@ -10,13 +10,13 @@ module.exports = {
 	},
 	proxyConfi: {
 		// target: 'http://cnodejs.org/api/v1',
-		target: 'http://localhost:4000',
+		target: 'http://localhost:3000',
 		changeOrigin: true,
 		ws: true,
 		// pathRewrite: {
 		//     '^/api': '/'
 		// },
 	},
-	port: 3000,
+	port: 8080,
 	timeout: 4000
 }

@@ -30,7 +30,7 @@ router.get('/find', function(req, res, next) {
 router.post('/find', function(req, res, next) {
     users.findByProperty(req, res, next);
 });
-router.get('/cha', function(req, res, next) {
+router.get('/api/chat', function(req, res, next) {
     users.sendData(req, res, next);
 });
 module.exports = router;

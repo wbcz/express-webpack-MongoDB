@@ -5,8 +5,7 @@
 </style>
 <template>
     <div class="chat-index">
-    dfsffs
-        <loading :showLoading="isShow"></loading>
+        list
     </div>
 </template>
 
@@ -16,7 +15,6 @@ import error from '~components/error'
 import ajax from '~mod/ajax'
 import nav from '../common/v-nav'
 import ElementUI from 'element-ui' // 引入element-ui
-console.log(4444444)
 
 Vue.use(ElementUI) // Vue全局使用
 

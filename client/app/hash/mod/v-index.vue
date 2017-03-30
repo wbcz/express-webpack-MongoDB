@@ -1,34 +1,30 @@
 <style lang="sass">
-    body {
-        padding: 10px;
-    }
 </style>
 <template>
     <div class="chat-index">
-        <router-link :to="{ path: 'list/5' }">goToHash</router-link>
-        <loading :showLoading="isShow"></loading>
+        <vHeader></vHeader>
+        <vNav></vNav>
     </div>
 </template>
 
 <script lang="babel">
-import loading from '~components/loading'
-import error from '~components/error'
 import ajax from '~mod/ajax'
-import nav from '../common/v-nav'
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-default/index.css'
-
-Vue.use(ElementUI) // Vue全局使用
+import vNav from '../common/v-nav'
+import vHeader from '../common/v-header'
+import Vue from 'vue'
 
 export default {
+
     name: 'index',
     data() {
+        this.$log.log('hello vue log')
         return {
             isShow: false,
         }
     },
     components: {
-        loading
+        vNav,
+        vHeader
     },
     async mounted() {
         console.log(this.$route)

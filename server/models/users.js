@@ -74,10 +74,10 @@ module.exports = {
         }
     },
     sendData: function(req, response, next) {
-        response.send({
-            name:1,
-            age: 2
-        })
-        //response.sendFile(path.resolve(__dirname, './../views/chat.html'))
+        // response.send({
+        //     name:1,
+        //     age: 2
+        // })
+        response.sendFile(path.resolve(__dirname, './../views/chat.html'))
     }
 };

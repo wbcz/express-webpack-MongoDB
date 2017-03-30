@@ -8,7 +8,7 @@ var users = require('./routes/users');
 
 var isDev = process.env.NODE_ENV !== 'PROD';
 var app = express();
-var port = 4000;
+var port = 3000;
 
 //app.use(history());
 // view engine setup

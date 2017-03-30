@@ -34,5 +34,5 @@ compiler.plugin('compilation', function (compilation) {
 })
 
 app.listen(port, function() {
-    console.log('App (dev) is going to be running on the port of 3000');
+    console.log('App (dev) is going to be running on the port of ' + port);
 })

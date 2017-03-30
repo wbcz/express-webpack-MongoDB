@@ -6,13 +6,10 @@
 <template>
     <div class="chat-index">
         <router-link :to="{ path: '/chat/list/5' }">Home</router-link>
-        <loading :showLoading="isShow"></loading>
     </div>
 </template>
 
 <script lang="babel">
-import loading from '~components/loading'
-import error from '~components/error'
 import ajax from '~mod/ajax'
 import nav from '../common/v-nav'
 import ElementUI from 'element-ui'
