@@ -1,8 +1,22 @@
 <style lang="sass">
+@import "mixin";
+.v-index-main {
+    position: absolute;
+    left: 0;
+    top: rem(110);
+    bottom: rem(120);
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index:9999;
+    width: 100%;
+}
 </style>
 <template>
     <div class="chat-index">
-        <vHeader></vHeader>
+        <vInput></vInput>
+        <main class="v-index-main">
+            <vItem></vItem>
+        </main>
         <vNav></vNav>
     </div>
 </template>
@@ -10,25 +24,27 @@
 <script lang="babel">
 import ajax from '~mod/ajax'
 import vNav from '../common/v-nav'
-import vHeader from '../common/v-header'
+import vInput from '../common/v-input'
+import vItem from '../common/v-item'
 import Vue from 'vue'
 
 export default {
 
     name: 'index',
     data() {
-        this.$log.log('hello vue log')
         return {
             isShow: false,
+            messageList: []
         }
     },
     components: {
         vNav,
-        vHeader
+        vInput,
+        vItem
     },
     async mounted() {
-        console.log(this.$route)
-        console.log(await ajax.get('/chat'))
+        let {status, data} = await ajax.get('/')
+        this.messageList = data
     }
 }
 

@@ -24,6 +24,7 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-stage-2": "^6.22.0",
+    "bluebird": "^3.5.0",
     "body-parser": "~1.15.1",
     "consolidate": "^0.14.1",
     "cookie-parser": "~1.4.3",
@@ -81,6 +82,8 @@
     "socket.io-client": "^1.7.3",
     "vue": "^2.2.4",
     "vue-router": "^2.3.0",
+    "vue-sockeio-client": "^2.0.2",
+    "vue-socket.io": "^2.1.1-a",
     "vuex-router-sync": "^4.1.2"
   }
 }

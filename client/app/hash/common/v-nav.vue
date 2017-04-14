@@ -18,12 +18,12 @@
 		display: block;
 		text-align: center;
 		flex: 1;
-		height: rem(90);
+		height: rem(100);
 	}
 	.chat {
-		font-size: rem(24);
+		font-size: rem(30);
 		position: relative;
-		top: rem(-30);
+		top: rem(-20);
 		color: #475669;
 	}
 }

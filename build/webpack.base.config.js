@@ -7,7 +7,12 @@ let {rootPath, distPath, publicPath, provideItems, proxy} = require('../config/i
 const baseConfig = {
     devtool: 'eval-source-map',
     entry: {
-        vendor: ["vue", "element-ui"]
+        vendor: [
+            'axios',
+            'vue-router',
+            'element-ui',
+            'element-ui/lib/theme-default/index.css'
+        ]
     },
     output: {
         path: distPath,

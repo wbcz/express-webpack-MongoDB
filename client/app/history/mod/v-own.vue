@@ -6,12 +6,19 @@
 <template>
     <div class="chat-index">
         own
+
+        <div>
+            总共：{{total}}
+            <p>
+                点下面的数字：<vButton @increment="incrementTotal"></vButton>
+            </p> 
+        </div>
     </div>
 </template>
 
 <script lang="babel">
 import ajax from '~mod/ajax'
-import nav from '../common/v-nav'
+import vButton from '../common/v-button'
 import ElementUI from 'element-ui' // 引入element-ui
 
 
@@ -21,16 +28,20 @@ export default {
     name: 'index',
     data() {
         return {
-            isShow: true,
+            total: 0
         }
     },
     components: {
-        loading
+        vButton
     },
     async mounted() {
-        //const data = 
         console.log(await ajax.get('/chat'))
         //if (data) this.list = data
+    },
+    methods: {
+        incrementTotal() {
+            this.total += 1
+        }
     }
 }
 

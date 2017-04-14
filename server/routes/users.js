@@ -30,6 +30,9 @@ router.get('/find', function(req, res, next) {
 router.post('/find', function(req, res, next) {
     users.findByProperty(req, res, next);
 });
+router.post('/login', function(req, res, next) {
+    users.login(req, res, next);
+});
 router.get('/api/chat', function(req, res, next) {
     users.sendData(req, res, next);
 });

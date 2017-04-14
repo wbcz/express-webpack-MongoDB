@@ -1,11 +1,12 @@
-var userModel = require('../schema/db');
+var userModel = require('../schema/db').users;
 var path = require('path');
 
 module.exports = {
     index: function(req, response, next) {
         userModel.find({}, function (err, result, res) {
             if(err) return console.log(err);
-            response.render('index', { result: result });
+            response.send(result)
+            //response.render('index', { result: result });
         });
     },
     create: function (req, response, next) {
@@ -79,5 +80,14 @@ module.exports = {
         //     age: 2
         // })
         response.sendFile(path.resolve(__dirname, './../views/chat.html'))
+    },
+    login: function(req, response, next) {
+        var name = req.body.name;
+        var getResult = function() {
+            userModel.find({name: name}, function(err, result) {
+                response.send(result)
+            });            
+        }
+        getResult();
     }
 };

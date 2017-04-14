@@ -9,11 +9,20 @@ db.once('open', function() {
   console.log('link success');
 })
 
-var classSchema = new mongoose.Schema({
+var usersSchema = new mongoose.Schema({
     name: String,
     age: Number
 })
 
-var classModel = mongoose.model('users', classSchema);
+var messageSchema = new mongoose.Schema({
+    name: String,
+    content: String
+})
 
-module.exports = classModel;
+var users = mongoose.model('users', usersSchema);
+var message = mongoose.model('messages', messageSchema);
+
+module.exports = {
+	users,
+	message
+}

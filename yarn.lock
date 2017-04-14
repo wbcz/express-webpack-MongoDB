@@ -874,7 +874,7 @@ bluebird@2.10.2:
   version "2.10.2"
   resolved "http://registry.npm.taobao.org/bluebird/download/bluebird-2.10.2.tgz#024a5517295308857f14f91f1106fc3b555f446b"
 
-bluebird@^3.0.5, bluebird@^3.1.1, bluebird@^3.4.7:
+bluebird@^3.0.5, bluebird@^3.1.1, bluebird@^3.4.7, bluebird@^3.5.0:
   version "3.5.0"
   resolved "http://registry.npm.taobao.org/bluebird/download/bluebird-3.5.0.tgz#791420d7f551eea2897453a8a77653f96606d67c"
 
@@ -1163,6 +1163,10 @@ coa@~1.0.1:
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/code-point-at/download/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
+
+coffee-script@1.2.0, coffee-script@>=1.0.1:
+  version "1.2.0"
+  resolved "http://registry.npm.taobao.org/coffee-script/download/coffee-script-1.2.0.tgz#b5e61e55f1ca8c4a9eb87d53aa0657ea43125b91"
 
 color-convert@^1.3.0:
   version "1.9.0"
@@ -1997,6 +2001,13 @@ filename-regex@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/filename-regex/download/filename-regex-2.0.0.tgz#996e3e80479b98b9897f15a8a58b3d084e926775"
 
+fileset@~0.1.5:
+  version "0.1.8"
+  resolved "http://registry.npm.taobao.org/fileset/download/fileset-0.1.8.tgz#506b91a9396eaa7e32fb42a84077c7a0c736b741"
+  dependencies:
+    glob "3.x"
+    minimatch "0.x"
+
 fill-range@^2.1.0:
   version "2.2.3"
   resolved "http://registry.npm.taobao.org/fill-range/download/fill-range-2.2.3.tgz#50b77dfd7e469bc7492470963699fe7a8485a723"
@@ -2185,6 +2196,13 @@ gaze@^1.0.0:
   dependencies:
     globule "^1.0.0"
 
+gaze@~0.3.2:
+  version "0.3.4"
+  resolved "http://registry.npm.taobao.org/gaze/download/gaze-0.3.4.tgz#5f94bdda0afe53bc710969bcd6f282548d60c279"
+  dependencies:
+    fileset "~0.1.5"
+    minimatch "~0.2.9"
+
 generate-function@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/generate-function/download/generate-function-2.0.0.tgz#6858fe7c0969b7d4e9093337647ac79f60dfbe74"
@@ -2222,6 +2240,13 @@ glob-parent@^2.0.0:
   dependencies:
     is-glob "^2.0.0"
 
+glob@3.x:
+  version "3.2.11"
+  resolved "http://registry.npm.taobao.org/glob/download/glob-3.2.11.tgz#4a973f635b9190f715d10987d5c00fd2815ebe3d"
+  dependencies:
+    inherits "2"
+    minimatch "0.3"
+
 glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@~7.1.0, glob@~7.1.1:
   version "7.1.1"
   resolved "http://registry.npm.taobao.org/glob/download/glob-7.1.1.tgz#805211df04faaf1c63a3600306cdf5ade50b2ec8"
@@ -2252,6 +2277,10 @@ graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@~4.1.9:
 "graceful-readlink@>= 1.0.0":
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/graceful-readlink/download/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
+
+growl@~1.7.0:
+  version "1.7.0"
+  resolved "http://registry.npm.taobao.org/growl/download/growl-1.7.0.tgz#de2d66136d002e112ba70f3f10c31cf7c350b2da"
 
 handlebars@1.x:
   version "1.3.0"
@@ -2731,6 +2760,31 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "http://registry.npm.taobao.org/isstream/download/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
+jasmine-growl-reporter@~0.0.2:
+  version "0.0.3"
+  resolved "http://registry.npm.taobao.org/jasmine-growl-reporter/download/jasmine-growl-reporter-0.0.3.tgz#b87ae551e359d28ad5217765eaef6c07b763f6c8"
+  dependencies:
+    growl "~1.7.0"
+
+jasmine-node@latest:
+  version "1.14.5"
+  resolved "http://registry.npm.taobao.org/jasmine-node/download/jasmine-node-1.14.5.tgz#18e8397b856924ee77003666c3731b5aea50c39d"
+  dependencies:
+    coffee-script ">=1.0.1"
+    gaze "~0.3.2"
+    jasmine-growl-reporter "~0.0.2"
+    jasmine-reporters "~1.0.0"
+    mkdirp "~0.3.5"
+    requirejs ">=0.27.1"
+    underscore ">= 1.3.1"
+    walkdir ">= 0.0.1"
+
+jasmine-reporters@~1.0.0:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/jasmine-reporters/download/jasmine-reporters-1.0.2.tgz#ab613ed5977dc7487e85b3c12f6a8ea8db2ade31"
+  dependencies:
+    mkdirp "~0.3.5"
+
 jju@^1.1.0:
   version "1.3.0"
   resolved "http://registry.npm.taobao.org/jju/download/jju-1.3.0.tgz#dadd9ef01924bc728b03f2f7979bdbd62f7a2aaa"
@@ -2776,6 +2830,13 @@ jsesc@^1.3.0:
 jsesc@~0.5.0:
   version "0.5.0"
   resolved "http://registry.npm.taobao.org/jsesc/download/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
+
+jslogger@^1.0.0:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/jslogger/download/jslogger-1.0.3.tgz#eafbd3803ba666aba5774935d6d734942d5d5747"
+  dependencies:
+    jasmine-node latest
+    stubble latest
 
 json-parse-helpfulerror@^1.0.2:
   version "1.0.3"
@@ -3042,6 +3103,10 @@ lower-case@^1.1.0, lower-case@^1.1.1, lower-case@^1.1.2:
   version "1.1.4"
   resolved "http://registry.npm.taobao.org/lower-case/download/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
 
+lru-cache@2:
+  version "2.7.3"
+  resolved "http://registry.npm.taobao.org/lru-cache/download/lru-cache-2.7.3.tgz#6d4524e8b955f95d4f5b58851ce21dd72fb4e952"
+
 lru-cache@^3.2.0:
   version "3.2.0"
   resolved "http://registry.npm.taobao.org/lru-cache/download/lru-cache-3.2.0.tgz#71789b3b7f5399bec8565dda38aa30d2a097efee"
@@ -3162,6 +3227,20 @@ mime@1.3.4, mime@1.3.x, mime@^1.3.4:
   version "1.3.4"
   resolved "http://registry.npm.taobao.org/mime/download/mime-1.3.4.tgz#115f9e3b6b3daf2959983cb38f149a2d40eb5d53"
 
+minimatch@0.3:
+  version "0.3.0"
+  resolved "http://registry.npm.taobao.org/minimatch/download/minimatch-0.3.0.tgz#275d8edaac4f1bb3326472089e7949c8394699dd"
+  dependencies:
+    lru-cache "2"
+    sigmund "~1.0.0"
+
+minimatch@0.x, minimatch@~0.2.9:
+  version "0.2.14"
+  resolved "http://registry.npm.taobao.org/minimatch/download/minimatch-0.2.14.tgz#c74e780574f63c6f9a090e90efbe6ef53a6a756a"
+  dependencies:
+    lru-cache "2"
+    sigmund "~1.0.0"
+
 minimatch@^3.0.0, minimatch@^3.0.2, minimatch@~3.0.2:
   version "3.0.3"
   resolved "http://registry.npm.taobao.org/minimatch/download/minimatch-3.0.3.tgz#2a4e4090b96b2db06a9d7df01055a62a77c9b774"
@@ -3181,6 +3260,10 @@ minimist@^1.1.2, minimist@^1.1.3, minimist@^1.2.0, minimist@~1.2.0:
   resolved "http://registry.npm.taobao.org/mkdirp/download/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+mkdirp@~0.3.5:
+  version "0.3.5"
+  resolved "http://registry.npm.taobao.org/mkdirp/download/mkdirp-0.3.5.tgz#de3e5f8961c88c787ee1368df849ac4413eca8d7"
 
 mongodb-core@2.1.8:
   version "2.1.8"
@@ -4475,6 +4558,10 @@ require_optional@~1.0.0:
     resolve-from "^2.0.0"
     semver "^5.1.0"
 
+requirejs@>=0.27.1:
+  version "2.3.3"
+  resolved "http://registry.npm.taobao.org/requirejs/download/requirejs-2.3.3.tgz#aa59fd3a0287eaf407959a138228044b5dd6a6a3"
+
 requires-port@1.0.x, requires-port@1.x.x:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/requires-port/download/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
@@ -4703,7 +4790,7 @@ shelljs@^0.7.7:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
-sigmund@^1.0.1:
+sigmund@^1.0.1, sigmund@~1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/sigmund/download/sigmund-1.0.1.tgz#3ff21f198cad2175f9f3b781853fd94d0d19b590"
 
@@ -4746,7 +4833,7 @@ socket.io-adapter@0.5.0:
     debug "2.3.3"
     socket.io-parser "2.3.1"
 
-socket.io-client@1.7.3, socket.io-client@^1.7.3:
+socket.io-client@1.7.3, socket.io-client@^1.4.6, socket.io-client@^1.7.3:
   version "1.7.3"
   resolved "http://registry.npm.taobao.org/socket.io-client/download/socket.io-client-1.7.3.tgz#b30e86aa10d5ef3546601c09cde4765e381da377"
   dependencies:
@@ -4949,6 +5036,12 @@ strip-indent@^1.0.1:
 strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "http://registry.npm.taobao.org/strip-json-comments/download/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
+
+stubble@latest:
+  version "0.1.0"
+  resolved "http://registry.npm.taobao.org/stubble/download/stubble-0.1.0.tgz#2f82810cdacafb1e335c35be011e65df1b28f0ad"
+  dependencies:
+    coffee-script "1.2.0"
 
 style-loader@^0.13.1:
   version "0.13.2"
@@ -5163,6 +5256,10 @@ umask@~1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/umask/download/umask-1.1.0.tgz#f29cebf01df517912bb58ff9c4e50fde8e33320d"
 
+"underscore@>= 1.3.1":
+  version "1.8.3"
+  resolved "http://registry.npm.taobao.org/underscore/download/underscore-1.8.3.tgz#4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022"
+
 uniq@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/uniq/download/uniq-1.0.1.tgz#b31c5ae8254844a3a8281541ce2b04b865a734ff"
@@ -5342,6 +5439,18 @@ vue-router@^2.3.0:
   version "2.3.0"
   resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-2.3.0.tgz#a25c8359e8ca989d22ce79f64322eb0ad0c8670f"
 
+vue-sockeio-client@^2.0.2:
+  version "2.0.2"
+  resolved "http://registry.npm.taobao.org/vue-sockeio-client/download/vue-sockeio-client-2.0.2.tgz#69433321c8b0b2035395c89b6a41fb18024c7517"
+  dependencies:
+    socket.io-client "^1.4.6"
+
+vue-socket.io@^2.1.1-a:
+  version "2.1.1-a"
+  resolved "http://registry.npm.taobao.org/vue-socket.io/download/vue-socket.io-2.1.1-a.tgz#d581691af47759c8d874e99acea22566e2e61894"
+  dependencies:
+    socket.io-client "^1.4.6"
+
 vue-style-loader@^2.0.0:
   version "2.0.4"
   resolved "http://registry.npm.taobao.org/vue-style-loader/download/vue-style-loader-2.0.4.tgz#4fc19e18bf162225338aac3b17d0fd0e1cfb7439"
@@ -5368,6 +5477,10 @@ vuex-router-sync@^4.1.2:
   version "4.1.2"
   resolved "http://registry.npm.taobao.org/vuex-router-sync/download/vuex-router-sync-4.1.2.tgz#584d6315909257adec2914a63d54b428c016b8ec"
 
+"walkdir@>= 0.0.1":
+  version "0.0.11"
+  resolved "http://registry.npm.taobao.org/walkdir/download/walkdir-0.0.11.tgz#a16d025eb931bd03b52f308caed0f40fcebe9532"
+
 watchpack@^0.2.1:
   version "0.2.9"
   resolved "http://registry.npm.taobao.org/watchpack/download/watchpack-0.2.9.tgz#62eaa4ab5e5ba35fdfc018275626e3c0f5e3fb0b"
@@ -5375,6 +5488,10 @@ watchpack@^0.2.1:
     async "^0.9.0"
     chokidar "^1.0.0"
     graceful-fs "^4.1.2"
+
+wblogger@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/wblogger/download/wblogger-1.0.1.tgz#0a1cb6c0eea3dd8b38937c3b2e49ad2565908565"
 
 wcwidth@^1.0.0:
   version "1.0.1"

@@ -26,7 +26,7 @@ function checkStatus(response) {
 
 function checkCode(res) {
     if (!res.data.success) {
-        setMessage(res.data.message || res.data.data)
+        // setMessage(res.data.message || res.data.data)
     }
     return res.data
 }
@@ -40,7 +40,7 @@ export default {
             timeout: config.timeout,
             headers: {
                 'X-Requested-With': 'XMLHttpRequest',
-                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                'Content-Type': 'application/json; charset=UTF-8'
             }
         }).then(checkStatus).then(checkCode)
     },

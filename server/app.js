@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var users = require('./routes/users');
+var socket = require('./bin/socket');
 
 var isDev = process.env.NODE_ENV !== 'PROD';
 var app = express();
@@ -23,9 +24,8 @@ app.use(cookieParser());
 // local variables for all views
 app.locals.env = process.env.NODE_ENV || 'dev';
 app.locals.reload = true;
-console.log(process.env.NODE_ENV, 'sendData')
-if (isDev) {
 
+if (isDev) {
     app.use('/', users);
     app.use(express.static(path.join(__dirname, './public')));
     var fallback = require('express-history-api-fallback')
@@ -38,17 +38,7 @@ if (isDev) {
     var server = http.createServer(app);
     //reload会影响到socket的状态，所以在使用socket的时候需要关闭它
     // reload(server, app);
-    
-    var io = require('socket.io')(server);
-
-    io.on('connection', function(socket) {
-        socket.emit('welcome','欢迎');
-        socket.broadcast.emit('patrol','大王叫我来巡山');
-        socket.on('move', function(data) {
-            socket.broadcast.emit('moveAll', data);
-        })
-    })
-
+    socket(server);
     server.listen(port, function(){
         console.log(process.env.NODE_ENV, 'process.env.NODE_ENV')
         console.log('App (dev) is now running on port 4000!');

@@ -6,6 +6,7 @@
 <template>
     <div class="chat-index">
         list
+        <p>动态组件list</p>
     </div>
 </template>
 
@@ -13,7 +14,6 @@
 import loading from '~components/loading'
 import error from '~components/error'
 import ajax from '~mod/ajax'
-import nav from '../common/v-nav'
 import ElementUI from 'element-ui' // 引入element-ui
 
 Vue.use(ElementUI) // Vue全局使用

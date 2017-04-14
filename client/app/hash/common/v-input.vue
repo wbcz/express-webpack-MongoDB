@@ -1,11 +1,14 @@
 <style lang="sass">
 @import "mixin";
 .v-header {
+	margin:0;
 	position: absolute;
 	left: 0;
 	top: 0;
 	right: 0;
-	padding: rem(0) rem(20) rem(20) rem(20);
+	height: rem(100);
+	padding: rem(0) rem(20) rem(10) rem(20);
+	padding-top: 0;
 	background: #E5E9F2;
 }
 </style>
