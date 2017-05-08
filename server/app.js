@@ -11,6 +11,7 @@ var isDev = process.env.NODE_ENV !== 'PROD';
 var app = express();
 var port = 3000;
 console.log(3333)
+console.log(4444)
 //app.use(history());
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
